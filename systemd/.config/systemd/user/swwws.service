@@ -1,0 +1,14 @@
+[Unit]
+Description=swwws slideshow daemon
+After=graphical-session.target
+Wants=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/swwws-daemon
+Restart=on-failure
+RestartSec=5
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=graphical-session.target
