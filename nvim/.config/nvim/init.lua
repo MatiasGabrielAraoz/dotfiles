@@ -29,6 +29,7 @@ vim.pack.add({
 	{ src = "https://github.com/echasnovski/mini.extra"},
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/linrongbin16/bufferlist.nvim"},
+	{ src= "https://github.com/numToStr/Comment.nvim"},
 })
 
 vim.o.background = "dark"
@@ -73,6 +74,9 @@ end, {desc = "just build"})
 vim.keymap.set('n', '<leader>jc', function ()
 	vim.cmd('!just clean')
 end, {desc = "just clean"})
+
+require("Comment").setup()
+
 local blink = require('blink.cmp')
 
 local check_backspace = function()
@@ -155,7 +159,6 @@ vim.lsp.config('lua_ls',{
 
 vim.lsp.enable('lua_ls')
 
--- Detectar git automáticamente y guardar en mini.visits
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
     local git_root = vim.fn.system("git rev-parse --show-toplevel 2>/dev/null"):gsub("\n", "")

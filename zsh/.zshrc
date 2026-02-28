@@ -24,6 +24,10 @@ export PREFIX="$HOME/opt/cross"
 export TARGET=i686-elf
 export PATH="$PREFIX/bin:$PATH"
 export VCPKG_TRIPLET="x86_64-pc-linux-gnu"  
+
+export PATH="$HOME/.local/bin:$PATH"
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
