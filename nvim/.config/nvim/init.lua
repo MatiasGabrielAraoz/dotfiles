@@ -42,11 +42,7 @@ vim.gruvbox_material_spell_foreground = 'none'
 require("plugins.treesitter")
 require("plugins.oil")
 require("plugins.mini")
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls"},
-})
+require("plugins.mason")
 
 
 vim.keymap.set('n', '<leader>o', function()
