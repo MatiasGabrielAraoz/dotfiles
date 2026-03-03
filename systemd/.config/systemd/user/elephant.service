@@ -2,6 +2,7 @@
 [Unit]
 Description=Elephant
 After=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
 Type=simple
