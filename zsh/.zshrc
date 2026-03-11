@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
+export EDITOR=nvim
 export ZSH="$HOME/.oh-my-zsh"
 export VCPKG_ROOT="$HOME/vcpkg" 
 export VCPKG_TRIPLET="x64-linux"  

@@ -1,0 +1,14 @@
+[Unit]
+Description=Wallpaper changer
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash /home/matias/BashScripts/wallpaperchanger.sh
+Restart=always
+RestartSec=5
+KillMode=process
+
+[Install]
+WantedBy=graphical-session.target

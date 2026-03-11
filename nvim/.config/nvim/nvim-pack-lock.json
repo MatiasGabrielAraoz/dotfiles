@@ -12,6 +12,10 @@
       "rev": "fd6311c0ba64f534f100b0d52c3b062d02af62c6",
       "src": "https://github.com/EL-MASTOR/bufferlist.nvim"
     },
+    "cinnamon.nvim": {
+      "rev": "450cb3247765fed7871b41ef4ce5fa492d834215",
+      "src": "https://github.com/declancm/cinnamon.nvim"
+    },
     "gruvbox-material": {
       "rev": "790afe9dd085aa04eccd1da3626c5fa05c620e53",
       "src": "https://github.com/sainnhe/gruvbox-material"

@@ -90,4 +90,20 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
+vim.lsp.config('omnisharp', {
+	cmd = { "omnisharp" },
+	capabilities = capabilities,
+	root_markers = { '*.sln', '*.csproj', '.git' },
+	settings = {
+	FormattingOptions = {
+		EnableEditorConfigSupport = true,
+        OrganizeImports = true,
+    },
+    RoslynExtensionsOptions = {
+        EnableImportCompletion = true, -- Para que blink te sugiera namespaces no importados
+        EnableAnalyzersSupport = true,
+    },
+},
+})
 
+vim.lsp.enable('omnisharp')
