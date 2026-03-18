@@ -1,14 +1,18 @@
-
 [Unit]
 Description=Elephant
+# Cambiamos Requisite por Wants para que sea más flexible
 After=graphical-session.target
-PartOf=graphical-session.target
+Wants=graphical-session.target
 
 [Service]
 Type=simple
-ExecStart=elephant
+# Añadimos un pequeño delay por si el servidor gráfico es lento en Arch
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/usr/bin/elephant
 Restart=on-failure
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=%h/.Xauthority
 
 [Install]
-WantedBy=graphical-session.target
-							
+# Si default.target no te funciona, probá con este que es el estándar de usuario
+WantedBy=default.target
