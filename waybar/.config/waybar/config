@@ -1,10 +1,10 @@
 {
   "layer": "bottom",
   "position": "top",
-  "height": 24,
+  "height": 30,
   "spacing": 4,
   "modules-left": [
-    "cava",
+    "custom/cava",
     
   ],
   "modules-center": [
@@ -13,6 +13,8 @@
 
   ],
   "modules-right": [
+	"memory",
+	"cpu",
     "clock"
     
   ],
@@ -24,6 +26,8 @@
     ]
   },
   "wlr/workspaces": {
+	"format": "{name}",
+	"all-outputs": "true",
     "on-click": "activate",
     "on-scroll-up": "hyprctl dispatch workspace e-1",
     "on-scroll-down": "hyprctl dispatch workspace e+1"
@@ -77,7 +81,32 @@
         "on-click-right": "mode"
       },
     },
-    "custom/cava": {
-    "exec": "sleep 3 && cava -p /home/matias/.config/cava/config | sed -u 's/;//g;s/0/0/g;s/1/1/g;s/2/2/g;s/3/3/g;s/4/4/g;s/5/5/g;s/6/6/g;s/7/7/g;s/8/8/g;s/9/9/g;'"
-    },
+"custom/cava": {
+    "exec": "stdbuf -oL cava -p ~/.config/cava/config | sed -u 's/[^0-7]//g;s/0/ /g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g'",
+    "format": "{}",
+    "tooltip": false,
+	"max-length": 16, 
+    "min-length": 16,
+},
+"cpu": {
+	"format": "  {usage}%",
+	"interval": 2,
+	"on-click": "foot -e btop",
+	"max-length": 10,
+
+},
+"memory": {
+	"format": "󰘚  {percentage}%",
+	"interval": 2,
+	"max-length": 10,
+
+},
+"sway/workspaces":{
+	"disable_scroll": false,
+	"all-outputs": true,
+	"format": "{index}",
+	"on_click": "activate"
+},
+
 }
+

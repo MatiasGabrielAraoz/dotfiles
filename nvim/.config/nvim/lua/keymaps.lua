@@ -9,9 +9,15 @@ end, { desc = "Save and Reload config" })
 vim.keymap.set('n', '<leader>ww', function()
 	vim.cmd('write') 
 end, { desc = "Save File" })
+
 vim.keymap.set('n', '<leader>wq', function()
 	vim.cmd('wqall') 
 end, { desc = "Save and quit" })
+
+vim.keymap.set('n', '<leader>wa', function()
+	vim.cmd('wall') 
+end, { desc = "Save all" })
+
 vim.keymap.set("n", "<leader>qq", function()
 	vim.cmd('qall!')
 end, {desc = "Quit without saving"})
@@ -54,4 +60,7 @@ vim.keymap.set('n', '<leader>tq', function ()
 	end
 end, { desc = "Cerrar terminal"})
 
-
+vim.keymap.set('n', '<M-Up>', ':resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Down>', ':resize +2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Left>', ':vertical resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Right>', ':vertical resize +2<CR>', { silent = true })
