@@ -1,4 +1,3 @@
-
 local blink = require('blink.cmp')
 
 local check_backspace = function()
@@ -89,21 +88,12 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-vim.lsp.config('omnisharp', {
-	cmd = { "omnisharp" },
-	capabilities = capabilities,
-	root_markers = { '*.sln', '*.csproj', '.git' },
-	settings = {
-	FormattingOptions = {
-		EnableEditorConfigSupport = true,
-        OrganizeImports = true,
-    },
-    RoslynExtensionsOptions = {
-        EnableImportCompletion = true, -- Para que blink te sugiera namespaces no importados
-        EnableAnalyzersSupport = true,
-    },
-},
+vim.lsp.config('csharp_ls', {
+    cmd = { 'csharp-ls' },
+    root_markers = { 'bin', '.git', '*.sln', '*.csproj' },
+    capabilities = capabilities,
 })
 
-vim.lsp.enable('omnisharp')
+vim.lsp.enable('csharp_ls')

@@ -4,7 +4,7 @@ vim.o.cursorline = true
 vim.o.signcolumn = "yes"
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
-vim.o.shiftwidth = 4 
+vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.mouse = ""
@@ -32,7 +32,8 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/linrongbin16/bufferlist.nvim"},
 	{ src = "https://github.com/numToStr/Comment.nvim"},
-	{ src = "https://github.com/declancm/cinnamon.nvim"}
+	{ src = "https://github.com/declancm/cinnamon.nvim"},
+	{ src = "https://github.com/kylechui/nvim-surround"}
 })
 
 vim.cmd.colorscheme "gruvbox-material"
@@ -47,6 +48,7 @@ require("plugins.mason")
 require("plugins.comment")
 require("plugins.blink-cmp")
 require("plugins.cinnamon")
+require("plugins.surround")
 require("autocmds")
 require("keymaps")
 
