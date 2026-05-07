@@ -1,0 +1,11 @@
+require("plenary.async")
+local builtin = require('telescope.builtin')
+
+vim.keymap.set('n', '<leader>e', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+-- vim.keymap.set('n', '<leader>sm', builtin.man_pages({ sections = { '1', '2', '3' }}), { desc = 'Telescope [S]earch [M]an Pages'})
+vim.keymap.set('n', '<leader>sm', function()
+	builtin.man_pages({ sections = { '1', '2', '3' } })
+end, {desc = 'Telescope [S]earch [M]an Pages'})

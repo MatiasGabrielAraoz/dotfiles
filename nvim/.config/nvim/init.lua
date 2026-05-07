@@ -8,6 +8,7 @@ vim.o.shiftwidth = 4
 vim.o.smartindent = true
 vim.o.clipboard = "unnamedplus"
 vim.o.mouse = ""
+vim.o.scrolloff = 8
 vim.g.mapleader = " "
 vim.o.winborder = "rounded"
 vim.o.background = "dark"
@@ -33,7 +34,9 @@ vim.pack.add({
 	{ src = "https://github.com/linrongbin16/bufferlist.nvim"},
 	{ src = "https://github.com/numToStr/Comment.nvim"},
 	{ src = "https://github.com/declancm/cinnamon.nvim"},
-	{ src = "https://github.com/kylechui/nvim-surround"}
+	{ src = "https://github.com/kylechui/nvim-surround"},
+	{ src = "https://github.com/nvim-telescope/telescope.nvim"},
+	{ src = "https://github.com/nvim-lua/plenary.nvim"}
 })
 
 vim.cmd.colorscheme "gruvbox-material"
@@ -49,8 +52,8 @@ require("plugins.comment")
 require("plugins.blink-cmp")
 require("plugins.cinnamon")
 require("plugins.surround")
+require("plugins.telescope")
 require("autocmds")
 require("keymaps")
 
 vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
-

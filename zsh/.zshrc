@@ -16,15 +16,21 @@ plugins=(git archlinux branch command-not-found docker emoji git git-commit gith
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 alias AI="ollama run gemma3:4b"
 alias vcpkg="/home/matias/vcpkg/vcpkg"
 alias ls="lsd"
 alias sshmama="ssh gisela@192.168.0.84"
+
+export MANROFFOPT="-c"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="nvim +Man!"
+
 export PREFIX="$HOME/opt/cross"
 export TARGET=i686-elf
-export PATH="$PREFIX/bin:$PATH"
 export VCPKG_TRIPLET="x86_64-pc-linux-gnu"  
 
+export PATH="$PREFIX/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 
