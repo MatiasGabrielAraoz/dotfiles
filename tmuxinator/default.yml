@@ -1,0 +1,16 @@
+# /home/matias/.config/tmuxinator/default.yml
+
+name: default
+root: ./
+
+windows:
+  - editor:
+      panes:
+        - nvim
+  - Terminal:
+      panes:
+        - 
+  - Musica: 
+      panes:
+        - rmpc
+

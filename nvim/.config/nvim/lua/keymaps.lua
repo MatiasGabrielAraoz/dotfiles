@@ -6,6 +6,10 @@ vim.keymap.set('n', '<leader>o', function()
 	vim.notify('Reloaded', vim.log.levels.INFO)
 end, { desc = "Save and Reload config" })
 
+vim.keymap.set('n', '<leader>e', function ()
+	vim.cmd('Oil')
+end, { desc = "Explore files with Oil" })
+
 vim.keymap.set('n', '<leader>ww', function()
 	vim.cmd('write') 
 end, { desc = "Save File" })
