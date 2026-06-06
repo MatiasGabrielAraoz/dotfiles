@@ -97,3 +97,27 @@ vim.lsp.config('csharp_ls', {
 })
 
 vim.lsp.enable('csharp_ls')
+
+vim.lsp.config('clangd', {
+	cmd = {
+			'clangd',
+			'--background-index',
+			'--clang-tidy',
+			'--all-scopes-completion',
+			'--completion-style=detailed',
+			'--header-insertion=never',
+	},
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "llvm" },
+    root_markers = { '.git', 'compile_commands.json', 'compile_flags.txt' },
+    capabilities = capabilities,
+})
+
+vim.lsp.enable('clangd')
+
+vim.lsp.config('llvm_lsp', {
+    cmd = { 'llvm-lsp-server' },
+    filetypes = { 'llvm' },
+    capabilities = capabilities,
+})
+
+vim.lsp.enable('llvm_lsp')

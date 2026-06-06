@@ -57,3 +57,9 @@ require("autocmds")
 require("keymaps")
 
 vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = "LSP Signature Help" })
+
+vim.filetype.add({
+	extension = {
+		ll = 'llvm',
+	},
+})
