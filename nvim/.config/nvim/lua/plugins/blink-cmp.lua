@@ -7,7 +7,7 @@ end
 
 blink.setup({
 	signature = {enabled = true},
-	
+
 	fuzzy = {
 		implementation = "prefer_rust",
 		prebuilt_binaries = {
@@ -54,6 +54,8 @@ blink.setup({
 			end,
 			'fallback',
 		},
+		['<C-l>'] = { 'snippet_forward', 'fallback'},
+		['<C-h>'] = { 'snippet_backward', 'fallback'},
 	},
 	appearance = {
 		use_nvim_cmp_as_default = true,
